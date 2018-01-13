@@ -15,3 +15,17 @@ There are two ways to fix this:
  1.  Add the following line to you project ```lombok.config``` file:
    ```lombok.addJavaxGeneratedAnnotation = false```
  2.  Add ```--add-modules=java.xml.ws.annotation``` to your javac command line parameters.
+ 
+## Maven
+ You can use lombok with maven by adding the following to your pom.xml:
+
+ ```
+ <dependencies>
+     <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>1.16.16</version>
+         <scope>provided</scope>
+     </dependency>
+ </dependencies>
+ ```
