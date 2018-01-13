@@ -9,10 +9,7 @@
 .idea/**/tasks.xml
 .idea/dictionaries
 
-# Intellij Target
-target/
-
-# Sensitive or high-churn files:
+# # Sensitive or high-churn files:
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.xml
