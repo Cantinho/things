@@ -13,12 +13,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Document
 public class Thing {
 
+  /**
+   * Identification.
+   */
   @Id
   private String id;
+
+  /**
+   * Thing name.
+   */
   private String name;
+
+  /**
+   * Thing value in gems.
+   */
   private Integer gems;
 
 }
