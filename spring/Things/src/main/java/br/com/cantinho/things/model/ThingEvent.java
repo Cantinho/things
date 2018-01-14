@@ -1,8 +1,7 @@
 package br.com.cantinho.things.model;
 
-import lombok.*;
-
 import java.util.Date;
+import lombok.*;
 
 /**
  * An event related to thing.

@@ -33,19 +33,17 @@ public class ThingsApplication {
    */
   @Bean
   protected CommandLineRunner things(final ThingRepository thingRepository) {
-    return args -> {
-      thingRepository.deleteAll()
-          .subscribe(null, null, () ->
-              Stream.of(new Thing(Utils.uuidAsString(UUID.randomUUID()), "Horizon", 100),
-              new Thing(Utils.uuidAsString(UUID.randomUUID()), "PS4", 2400),
-              new Thing(Utils.uuidAsString(UUID.randomUUID()), "Batman", 100),
-              new Thing(Utils.uuidAsString(UUID.randomUUID()), "Guitar", 100),
-              new Thing(Utils.uuidAsString(UUID.randomUUID()), "Hat", 100),
-              new Thing(Utils.uuidAsString(UUID.randomUUID()), "Smart phone", 100))
-              .forEach(thing -> thingRepository//NOPMD
-                  .save(thing)
-                  .subscribe(System.out::println)));
-    };
+    return args -> thingRepository.deleteAll()
+        .subscribe(null, null, () ->
+            Stream.of(new Thing(Utils.uuidAsString(UUID.randomUUID()), "Horizon", 100),
+            new Thing(Utils.uuidAsString(UUID.randomUUID()), "PS4", 2400),
+            new Thing(Utils.uuidAsString(UUID.randomUUID()), "Batman", 100),
+            new Thing(Utils.uuidAsString(UUID.randomUUID()), "Guitar", 100),
+            new Thing(Utils.uuidAsString(UUID.randomUUID()), "Hat", 100),
+            new Thing(Utils.uuidAsString(UUID.randomUUID()), "Smart phone", 100))
+            .forEach(thing -> thingRepository//NOPMD
+                .save(thing)
+                .subscribe(System.out::println)));
   }
 
 }
